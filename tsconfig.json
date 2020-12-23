@@ -16,5 +16,5 @@
     "noImplicitThis": true,
     "noImplicitReturns": true
   },
-  "exclude": ["test"]
+  "exclude": ["test", "dist"]
 }
