@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function default_1(data, head = { disabled: false, uppercase: false }) {
+function pretty(data, head = { disabled: false, uppercase: false }) {
     let table = '', pad = {};
     data.forEach((item) => Object.entries(item).forEach(([key, value]) => {
         if ((pad[key] ?? 0) <= key.length) {
@@ -22,4 +22,5 @@ function default_1(data, head = { disabled: false, uppercase: false }) {
         }));
     return table.trimStart();
 }
-exports.default = default_1;
+exports.default = pretty;
+module.exports = pretty;

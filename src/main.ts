@@ -1,4 +1,4 @@
-export default function (
+function pretty(
   data: Array<Object>,
   head: {
     disabled?: boolean
@@ -39,3 +39,6 @@ export default function (
 
   return table.trimStart()
 }
+
+export default pretty
+module.exports = pretty
