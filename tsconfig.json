@@ -15,5 +15,6 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "noImplicitReturns": true
-  }
+  },
+  "exclude": ["test"]
 }
