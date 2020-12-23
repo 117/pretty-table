@@ -1,11 +1,11 @@
 {
   "name": "@master-chief/pretty-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "format data to a console-friendly table",
-  "main": "index.js",
+  "main": "./dist/main.js",
   "author": "117",
   "license": "ISC",
-  "types": "@types",
+  "types": "./@types/main.d.ts",
   "scripts": {
     "build": "rimraf dist @types && npm i && tsc",
     "test": "npm run test:default",
