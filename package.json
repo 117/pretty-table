@@ -1,6 +1,6 @@
 {
   "name": "@master-chief/pretty-table",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Format data to a console friendly table.",
   "author": "117",
   "contributors": [
@@ -8,11 +8,11 @@
   ],
   "license": "ISC",
   "type": "module",
-  "types": "./@types/index.d.ts",
-  "main": "./dist/cjs/index.cjs",
+  "types": "./@types/main.d.ts",
+  "main": "./dist/cjs/main.cjs",
   "exports": {
-    "import": "./dist/mjs/index.mjs",
-    "require": "./dist/cjs/index.cjs"
+    "import": "./dist/mjs/main.mjs",
+    "require": "./dist/cjs/main.cjs"
   },
   "scripts": {
     "build": "npm i && npm run clean && npm run build:mjs && npm run build:cjs && ./remap.sh",
