@@ -1,8 +1,7 @@
 /**
- * Does what the main function does but a tiny bit faster, with a catch; your data has to all be in the same format(properties should be added in the same order) for this to work properly. Since this might be a major limitation, it's included separately.
- * @param data The data to be "tablified".
- * @param head Whether to include the header(titles of every category). Defaults to true.
- * @param upper Whether to uppercase the top line(best with header). Defaults to false.
+ * Compiles an array of objects or an array of arrays(even though the types say otherwise) into a cleanly spaced table.
+ * @param data Data to convert into a table.
+ * @param param1 Header options
  */
 export default function (data: {
     [key: string]: any;

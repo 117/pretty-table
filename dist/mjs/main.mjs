@@ -1,14 +1,15 @@
 /**
- * Does what the main function does but a tiny bit faster, with a catch; your data has to all be in the same format(properties should be added in the same order) for this to work properly. Since this might be a major limitation, it's included separately.
- * @param data The data to be "tablified".
- * @param head Whether to include the header(titles of every category). Defaults to true.
- * @param upper Whether to uppercase the top line(best with header). Defaults to false.
+ * Compiles an array of objects or an array of arrays(even though the types say otherwise) into a cleanly spaced table.
+ * @param data Data to convert into a table.
+ * @param param1 Header options
  */
 export default function (data, { head = true, upper = false } = {}) {
     // Holds rows and keeps track of the current row being added to
-    let rows = [], row = 0, cs = [], add = (i, j) => {
+    let rows = [], row = 0, props = {}, cs = [], 
+    // Adds the current value to the 2d array holding all the values
+    add = (i, j) => {
         // uhhh this mess adds the next value to the arrays, and updates cs
-        let ind = rows[row].push(i[j] + '') - 1, l = rows[row][ind].length;
+        let ind = props[j], l = (rows[row][ind] = i[j]).length;
         // This updates the current max length for the row if it's less than the value's length
         if (cs[ind] < l)
             cs[ind] = l;
@@ -26,7 +27,7 @@ export default function (data, { head = true, upper = false } = {}) {
             for (let j in i) {
                 // If the first row(the row for the header) doesn't include the index, we add it in
                 if (!rows[0].includes(j))
-                    cs[rows[0].push(j) - 1] = j.length;
+                    cs[(props[j] = rows[0].push(j) - 1)] = j.length;
                 // Basically add the value to the 2d array
                 add(i, j);
             }
@@ -35,10 +36,14 @@ export default function (data, { head = true, upper = false } = {}) {
         // basically the same thing as above but without header check
     }
     else {
+        let h = 0;
         for (let i of data) {
             rows[row] = [];
-            for (let j in i)
+            for (let j in i) {
+                if (!props[j])
+                    (props[j] = h), h++;
                 add(i, j);
+            }
             row++;
         }
     }
