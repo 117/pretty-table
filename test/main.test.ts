@@ -1,7 +1,7 @@
 import pretty from '../src/main'
 
 describe('pretty-table', () => {
-  it('should parse a table properly', () => {
+  it('should parse a table properly', () =>
     expect(
       pretty([
         {
@@ -15,6 +15,5 @@ describe('pretty-table', () => {
           age: 18,
         },
       ]),
-    ).toBe(`name  animal age\ncosmo cat    12\nmabel dog    18`)
-  })
+    ).toBe(`name  animal age\ncosmo cat    12\nmabel dog    18`))
 })

@@ -1,20 +1,11 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "target": "esnext",
-    "module": "commonjs",
-    "outDir": "dist",
     "moduleResolution": "node",
-    "lib": ["es2020"],
-    "declaration": true,
-    "declarationDir": "@types",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "strict": true,
-    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "es2020",
+    "target": "es2020",
     "noImplicitThis": true,
-    "noImplicitReturns": true
-  },
-  "exclude": ["test", "dist"]
+    "noImplicitAny": true,
+    "strict": true
+  }
 }

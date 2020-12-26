@@ -5,7 +5,7 @@
 ![build](https://img.shields.io/github/workflow/status/117/pretty-table/test?style=flat-square)
 ![prettier](https://img.shields.io/static/v1?label=code%20style&message=prettier&color=ff51bc&style=flat-square)
 
-Format data to a console-friendly table.
+Format data to a console friendly table.
 
 ## Contents
 
@@ -50,4 +50,4 @@ mabel dog    18
 
 ## Contributing
 
-Feel free to contribute and PR to your 💖's content. 
+Feel free to contribute and PR to your 💖's content.
