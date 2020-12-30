@@ -76,7 +76,7 @@ var lines = function (rows, cs) {
         // Makes the initial string
         pog[r] = '';
         // Loops through each value of each row
-        for (var i = 0, v = rows[r][0]; i < l - 1; v = rows[r][++i])
+        for (var i = 0, v = rows[r][0] + ''; i < l - 1; v = rows[r][++i] + '')
             // Adds multiple spaces if the value's length is less than the max for the row
             if (v.length < cs[i])
                 pog[r] += v + ' '.repeat(cs[i] - v.length + 1);
