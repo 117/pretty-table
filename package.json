@@ -1,6 +1,6 @@
 {
   "name": "@master-chief/pretty-table",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Format data to a console friendly table.",
   "author": "117",
   "contributors": [
@@ -15,9 +15,9 @@
     "require": "./dist/cjs/main.cjs"
   },
   "scripts": {
-    "build": "npm i && npm run clean && npm run build:mjs && npm run build:cjs && ./remap.sh",
-    "build:mjs": "tsc --outDir dist/mjs --moduleResolution node --allowSyntheticDefaultImports -d --declarationDir @types --module esnext --target esnext src/*.ts",
-    "build:cjs": "tsc --outDir dist/cjs --moduleResolution node --esModuleInterop src/*.ts",
+    "build": "npm i && npm run clean && npm run build:mjs && npm run build:cjs",
+    "build:mjs": "tsc --outDir dist/mjs --moduleResolution node --allowSyntheticDefaultImports -d --declarationDir @types --module esnext --target esnext src/*.ts && map dist/mjs js mjs",
+    "build:cjs": "tsc --outDir dist/cjs --moduleResolution node --esModuleInterop src/*.ts && map dist/cjs js cjs",
     "clean": "rimraf dist @types",
     "test": "npm run test:default",
     "test:default": "jest",
@@ -38,5 +38,8 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "@master-chief/map": "0.0.6"
   }
 }
