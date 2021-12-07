@@ -27,7 +27,7 @@ From NPM:
 $ npm i @master-chief/pretty-table
 ```
 
-## Example
+## Example 
 
 ```typescript
 import pretty from '@master-chief/pretty-table'
